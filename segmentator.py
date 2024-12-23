@@ -30,7 +30,6 @@ class ChatSegmentator:
                 current_unit = self.get_media_unit_from_msg(msg_list[i])
             else: current_unit = self.get_unit_from_msg(msg_list[i])
             
-            
             # добавляем паузу, если она нужна, засекаем начало следующей паузы
             if current_unit.speaker in speakers_pauses_started:
                 print('p for ' + str(current_unit))
@@ -42,8 +41,8 @@ class ChatSegmentator:
                 ))
             # запоминаем для будущей паузы
             speakers_pauses_started[current_unit.speaker] = current_unit.time
-            # сортируем ? хотя всё по порядку добавили
             self.chat_segments.append(current_unit)
+            # сортируем ? хотя всё по порядку добавили
     
     def get_unit_from_msg(self, msg):
         adopted_msg = AdoptedTgMessage(msg)
