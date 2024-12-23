@@ -32,7 +32,6 @@ class ChatSegmentator:
             
             # добавляем паузу, если она нужна, засекаем начало следующей паузы
             if current_unit.speaker in speakers_pauses_started:
-                print('p for ' + str(current_unit))
                 self.chat_segments.append(PauseUnit(
                     current_unit.speaker,
                     speakers_pauses_started[current_unit.speaker],
